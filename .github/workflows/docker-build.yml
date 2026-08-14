@@ -7,6 +7,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -22,4 +24,13 @@ jobs:
         with:
           context: .
           push: true
-          tags: vincenson/moja-app-flask:latest
+          tags: vincenson/moja-app-flask:${{ github.sha }}
+
+      - name: Update Helm values with new tag
+        run: |
+          sed -i "s/tag: .*/tag: \"${{ github.sha }}\"/" flask-chart/values.yaml
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add flask-chart/values.yaml
+          git commit -m "Automatyczna aktualizacja tagu obrazu na ${{ github.sha }}" || echo "Brak zmian"
+          git push
