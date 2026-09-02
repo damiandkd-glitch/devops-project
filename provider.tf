@@ -1,9 +1,5 @@
 terraform {
   required_providers {
-    minikube = {
-      source  = "scott-the-programmer/minikube"
-      version = "0.4.4"
-    }
     kubernetes = {
       source  = "hashicorp/kubernetes"
       version = "~> 2.30"
@@ -11,4 +7,6 @@ terraform {
   }
 }
 
-provider "minikube" {}
+provider "kubernetes" {
+  config_path = "~/.kube/config"
+}
