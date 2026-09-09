@@ -1,0 +1,4 @@
+replicaCount: 1
+
+image:
+  tag: "bb664399b73d0bbf249b460ea8e0e998cbf22b54"
