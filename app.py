@@ -7,7 +7,7 @@ app = Flask(__name__)
 def home():
     db_password = os.environ.get('DB_PASSWORD', 'BRAK - zmienna nie znaleziona')
     dlugosc_hasla = len(db_password)
-    return f'Cześć! Moja aplikacja działa w Kubernetes!" - TESTOWANA ZMIANA W DEV" Sekret DB_PASSWORD ma {dlugosc_hasla} znaków.'
+    return f'Cześć! Moja aplikacja działa w Kubernetes! la TESTOWANA ZMIANA W DEV" Sekret DB_PASSWORD ma {dlugosc_hasla} znaków.'
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
