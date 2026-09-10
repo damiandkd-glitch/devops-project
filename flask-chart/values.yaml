@@ -9,7 +9,7 @@ replicaCount: 2
 image:
   repository: vincenson/moja-app-flask
   pullPolicy: IfNotPresent
-  tag: "acfd0efbadd66bd3f39e120906e57a3b2456abb2"
+  tag: "9fc4e61cfdb16f0ef9fb71cac04e322cda9623ec"
 
 # This is for the secrets for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 imagePullSecrets: []
