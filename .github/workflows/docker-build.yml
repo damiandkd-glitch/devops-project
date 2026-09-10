@@ -44,7 +44,7 @@ jobs:
           push: true
           tags: vincenson/moja-app-flask:${{ github.sha }}
 
-                  - name: Update production values (main only)
+      - name: Update production values (main only)
         if: github.ref_name == 'main'
         run: |
           sed -i "s/tag: .*/tag: \"${{ github.sha }}\"/" flask-chart/values.yaml
