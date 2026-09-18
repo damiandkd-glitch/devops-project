@@ -50,6 +50,11 @@ spec:
                 secretKeyRef:
                   name: app-secret
                   key: DB_PASSWORD
+            - name: ENVIRONMENT
+              valueFrom:
+                configMapKeyRef:
+                  name: app-settings-terraform
+                  key: ENVIRONMENT
           {{- with .Values.livenessProbe }}
           livenessProbe:
             {{- toYaml . | nindent 12 }}
