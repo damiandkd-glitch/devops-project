@@ -1,0 +1,4 @@
+apiVersion: v2
+name: moj-wlasny-chart
+description: Mój pierwszy, ręcznie napisany Helm Chart
+version: 0.1.0
