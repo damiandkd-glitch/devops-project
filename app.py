@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    db_password = os.environ.get('DB_PASSWORD', 'BRAK - zmienna nie znaleziona')
+    db_password = os.environ.get('DB_PASSWORD', 'BgownozieloneRAK - zmienna nie znaleziona')
     dlugosc_hasla = len(db_password)
     environment = os.environ.get('ENVIRONMENT', 'nieznane')
     return f'Cześć! Środowisko: {environment}. Sekret DB_PASSWORD ma {dlugosc_hasla} znaków. Wersja aplikacji: 3.0'
